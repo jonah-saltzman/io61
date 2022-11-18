@@ -1,22 +1,18 @@
-CS 61 Problem Set 4
+io61
 ===================
 
-**Fill out both this file and `AUTHORS.md` before submitting.** We grade
-anonymously, so put all personally identifying information, including
-collaborators, in `AUTHORS.md`.
+io61 is the implementation of a subset of stdio functions I wrote
+for CS61. io61 implements `fseek`, `fread`, `fwrite`, `freadc`,
+and `fwritec` using memory-mapped IO or a single-slot cache, 
+depending on the file type. It is a correct implementation and
+passes a number of difficult tests found in `/tests`. It is also
+a fast implementation, outperforming `stdio` by an average factor
+of 9.38x across 45 tests of various access patterns and payload
+sizes.
 
-Grading notes (if any)
-----------------------
-Even before implementing memory-mapped IO, my performance on many of the
-tests was significantly below that of other students doing the same thing
-(regular single-slot 4096B cache). After I implemented MMIO, some tests
-improved slightly, but it seems like something else is my bottleneck.
-I showed my code to both Dhilan and Austin, and they agreed that something
-seemed wrong based on the test performance, but they couldn't figure out
-what it was. Hoping my EC attempt (MMIO) can partly make up for these
-performance issues.
+![Course test results](https://i.imgur.com/rj0fPBc.png)
 
+ I wrote all
+the code in `io61.cc` and `io61.hh` except the small setup functions
+at the end of `io61.cc`.
 
-Extra credit attempted (if any)
--------------------------------
-- Memory-mapped IO
